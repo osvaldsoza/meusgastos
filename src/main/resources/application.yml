@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    password: osf77
+    url: jdbc:postgresql://localhost/gastos?createDatabaseIfNotExist=true&serverTimezone=UTC
+    username: soza
+  jpa:
+    database: POSTGRESQL
+    hibernate:
+      ddl-auto: create
