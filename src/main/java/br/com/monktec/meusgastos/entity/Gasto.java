@@ -11,6 +11,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,8 +21,9 @@ public class
 Gasto implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
+    private UUID id;
 
     private String descricao;
 
@@ -29,9 +31,11 @@ Gasto implements Serializable {
 
     @JsonProperty("dataVencimento")
     @JsonFormat(pattern = "dd/MM/yyyy")
+    @Column(name = "data_vencimento")
     private LocalDate dataVencimento;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "tipo_gasto")
     private TipoGasto tipoGasto;
 
     @Enumerated(EnumType.STRING)

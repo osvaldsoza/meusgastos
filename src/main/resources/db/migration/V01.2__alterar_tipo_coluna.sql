@@ -1,0 +1,5 @@
+ALTER TABLE tb_gasto ADD COLUMN new_id UUID NULL;
+UPDATE tb_gasto SET new_id = CAST(LPAD(TO_HEX(id), 32, '0') AS UUID);
+ALTER TABLE tb_gasto DROP COLUMN id;
+ALTER TABLE tb_gasto RENAME COLUMN new_id TO id;
+ALTER TABLE tb_gasto ALTER COLUMN id SET NOT NULL;

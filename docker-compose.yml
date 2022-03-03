@@ -1,6 +1,6 @@
 version: '3.1'
 services:
-  postgres-petz:
+  postgres-meusgastos:
     container_name: meusgastos
     image: postgres:14.2
     environment:

@@ -9,7 +9,10 @@ public enum Status {
     PAGO("Pago"),
 
     @JsonProperty("A pagar")
-    A_PAGAR("A pagar");
+    A_PAGAR("A pagar"),
+
+    @JsonProperty("Vencido")
+    VENCIDO("Vencido");
 
     @Getter
     private String value;
